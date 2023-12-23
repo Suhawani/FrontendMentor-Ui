@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+
+/* Modern CSS reset: https://github.com/hankchizljaw/modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article>*+* {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* Global styles */
+:root {
+  --clr-white: hsl(0, 0%, 98%);
+  --clr-gray: hsl(0, 0%, 41%);
+  --clr-black: hsl(0, 0%, 8%);
+
+  --fw-regular: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --fs-base: 1rem;
+  --fs-small: 1.125rem;
+  --fs-large: 1.802rem;
+  --fs-xl: 5.5rem;
+
+}
+
+
+body {
+  font-family: 'Epilogue', sans-serif;
+  background-color: var(--clr-lightgray);
+  color: var(--clr-gray);
+  font-size: var(--fs-base)
+}
+
+header {
+  margin: 1.5rem 2rem;
+  align-items: center;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--clr-black);
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--fs-xl);
+}
+
+li a {
+  font-size: var(--fs-base);
+  color: var(--clr-gray);
+  text-decoration: none
+}
+
+
+/* Composition */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+  flex-direction: var(--direction, row);
+}
+
+
+/* Utilities */
+.container {
+  width: min(100% - 2rem, 80%);
+  margin-inline: auto;
+}
+
+.push-right {
+  margin-left: auto;
+}
+
+.push-bottom {
+  margin-top: auto;
+}
+
+.ml-2 {
+  margin-left: 2rem;
+}
+
+.my-4 {
+  margin-block: 4rem;
+}
+
+.my-3 {
+  margin-block: 3rem;
+}
+
+.my-2 {
+  margin-block: 2rem;
+}
+
+
+.no-squish {
+  flex: none;
+}
+
+
+
+/* Blocks */
+.home {
+  height: 80vh;
+  /* border: 2px red solid; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home__left {
+  --flow-space: 6rem;
+  --gap: 3rem;
+  --direction: column;
+  justify-content: space-between;
+  
+  height: 100%;
+  width: 100%;
+  
+}
+
+.home__content {
+  --flow-space: 2.5rem;
+ 
+  align-items: flex-start;
+}
+
+.home__content p {
+  line-height: 1.5;
+  color: var(--clr-gray);
+  font-size: var(--fs-small);
+  width: min(65ch, 60%);
+}
+
+.home__companies {
+  --direction: row;
+  --gap: 3rem;
+}
+
+.home__right {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.home__right img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+
+button {
+  padding: 0.7em 1em;
+  background: transparent;
+  border: none;
+  color: var(--clr-gray);
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+
+
+nav[data-type="primary"] ul {
+  --gap: 3rem;
+}
+
+
+button[data-type="primary"] {
+  background: var(--clr-black);
+  color: var(--clr-white);
+  font-weight: var(--fw-bold);
+  padding-block: 1em;
+}
+
+button[data-type="secondary"] {
+  border: 2px var(--clr-gray) solid;
+}
